@@ -28,7 +28,12 @@ of www.endmemo.com, altitude equation courtesy of NOAA, and dew point equation
 courtesy of Brian McNoldy at http://andrew.rsmas.miami.edu.
  */
 
-#include <Wire.h>
+// Macro to make this lib work with jm_wire.h
+#if __has_include("jm_Wire.h")
+  #include <jm_Wire.h>
+  #else
+  #include <Wire.h>
+#endif
 
 #include "BME280.h"
 
